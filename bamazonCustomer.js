@@ -56,7 +56,7 @@ function customerActionsPrompt() {
 //This function receives the productID and Qty as arguments and queries the database for the corresponsing row.
 //An inventory check is done before the purchase total is displayed to the user
 function purchaseItem(productID,purchaseQty) {
-    var query = "SELECT * FROM products WHERE item_ID="+productID;
+    var query = `SELECT * FROM products WHERE item_ID=${productID}`;
     connection.query(query, function(err, res) {
         if(err) {
             console.log(err)
@@ -68,20 +68,24 @@ function purchaseItem(productID,purchaseQty) {
 }
 
 //This function is called when there is not enough inventory for the purchase.
+//User is notified then Inventory is redisplayed to the user
 function invalidPurchase() {
     console.log('Insufficient quantity!')
     displayInventory()
 }
 
+//This function is called when there is enough inventory.
+//New Stock Quantity is calculated then sent to the database as an UPDATE
+//Purchase total is displayed to user and Updated Inventory is redisplayed to the User
 function validPurchase(product,purchaseQty) {
     var newStockQty = product.stock_quantity-purchaseQty
-    var query = "UPDATE products SET stock_quantity="+newStockQty+" WHERE item_ID="+product.item_ID;
+    var query = `UPDATE products SET stock_quantity=${newStockQty} WHERE item_ID=${product.item_ID}`;
     connection.query(query, function(err, res) {
         if(err) {
             console.log(err)
          } else {
             var cost = product.price*purchaseQty
-            console.log("Total cost of purchase is $"+cost)
+            console.log(`Total cost of purchase is $${cost}`)
             displayInventory()
         }     
     });
