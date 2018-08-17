@@ -46,6 +46,7 @@ function displayManagerOptions() {
                 break
 
             case 'Add New Product':
+                addProduct()
                 break
         }
     });
@@ -108,3 +109,45 @@ function addInventory() {
         });
     });
 }
+
+function addProduct() {
+    inquirer
+    .prompt([
+        {
+            type:"input",
+            name:"productName",
+            message:"What is the name of the new product?"
+        },
+        {
+            type:"input",
+            name:"department",
+            message:"What department does it belong too?"
+        },
+        {
+            type:"input",
+            name:"price",
+            message:"What will be the retail price of the product?"
+        },
+        {
+            type:"input",
+            name:"qty",
+            message:"What is the initial quantity?"
+        },
+    ])
+    .then(answer => {
+        connection.query("INSERT INTO products SET ?", 
+        {
+            product_name : answer.productName,
+            department_name : answer.department,
+            price : answer.price,
+            stock_quantity : answer.qty
+        }, function(err, res) {
+            if(err) {
+                console.log(err)
+            } else {
+                viewProducts()
+            }     
+        });
+    });
+}
+
