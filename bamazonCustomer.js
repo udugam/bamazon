@@ -82,14 +82,25 @@ function validPurchase(product,purchaseQty) {
     connection.query(query, function(err, res) {
         if(err) {
             console.log(err)
-         } else {
+        } else {
             var cost = product.price*purchaseQty
             console.log(`Total cost of purchase is $${cost}`)
+            addToProductSales(product.item_ID,cost)
             displayInventory()
         }     
     });
 }
 
+//This function will take the productID and sale amount as arguments and add the sale to the product_sales column of the DB
+function addToProductSales(productID,sale) {
+    // var query = `UPDATE products SET product_sales+=${sale} WHERE item_ID=${productID}`;
+    connection.query(`UPDATE products SET product_sales = product_sales+${sale} WHERE item_ID = ${productID}`,
+    function(err, res) {
+        if(err) {
+            console.log(err)
+        } 
+    })
+}
 
 
 
