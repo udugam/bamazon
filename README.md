@@ -3,8 +3,8 @@ This is a command line application that allows users to interact with a retail s
 
 Below are links to demos of the three types of users for the application: Customers, Managers, & Supervisors
 
-#Customers
+# Customers
 
-#Managers
+# Managers
 
-#Supervisors
+# Supervisors
