@@ -53,6 +53,7 @@ function viewDepartmentSales() {
             console.log(err)
         } else {
             console.table(res)
+            displaySupervisorOptions()
         }
     })
 }
