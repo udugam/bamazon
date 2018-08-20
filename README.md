@@ -9,7 +9,7 @@ The bamazon database consists of two tables, products and departments. The follo
 ![Image of Columns](https://github.com/udugam/bamazon/blob/master/screenshots/BamazonColumns.png)
 
 ### Customer Experience
-The customer application (bamazonCustomer.js) allows a user to purchase products by ID. Upon launch, the products in inventory are first printed to the console before the user is prompted to make a product choice and quantity to purchase. Upon selection, the purchase total is displayed to the user and the updated store inventory is re-printed to the console. Click here for a demo of the [Bamazon Customer Experience](https://youtu.be/5jjHNdIj1X8)
+The customer application (bamazonCustomer.js) allows a user to purchase products by ID. Upon launch, the products in inventory are first printed to the console before the user is prompted to make a product choice and quantity to purchase. Upon selection, the purchase total is displayed to the user and the updated store inventory is re-printed to the console. Click here for a demo of the [Bamazon Customer Experience](https://youtu.be/15JqEcQBagU)
 
 ### Supervisor Experience
 
