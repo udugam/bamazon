@@ -15,7 +15,7 @@ The customer application (bamazonCustomer.js) allows a user(customer) to purchas
 The manager application (bamazonManager.js) allows a user(manager) to view products for sale, view low inventory, add inventory, and add a new product for sale. Low inventory is set at a quantity less than 5. Here is the demo of the [Bamazon Manager Experience](https://youtu.be/kzj6OEj8Tdk)
 
 ### Supervisor Experience
-The supervisor application (bamazonSupervisor.js) allows a user(supervisor) to view products sales by department and add new departments. The products sales by department option will print to the console all departments that have products for sale while summing up the total sales and calculating the total profit. Overhead costs are pre-set in the program code. Please also note that when a new department is added, it will not show up on the product sales table until a supervisor adds a product to the department. Here is the demo of the [Bamazon Supervisor Experience](https://youtu.be/tgTuOKWlBzs)
+The supervisor application (bamazonSupervisor.js) allows a user(supervisor) to "view product sales by department" and "add new departments". The product sales by department option will print to the console all departments that have products for sale while calculating the total sales and total profit for that department. Overhead costs for each department are pre-set in the program code. Please also note that when a new department is added, it will not show up in the department sales table until a supervisor adds a product to the new department. Here is the demo of the [Bamazon Supervisor Experience](https://youtu.be/tgTuOKWlBzs)
 
 
 
